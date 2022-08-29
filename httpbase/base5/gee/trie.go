@@ -52,6 +52,7 @@ func (n *node) insert(pattern string, parts []string, height int) {
 	}
 
 	part := parts[height]
+	fmt.Printf("[insert 4] part: %s\n", part)
 	child := n.matchChild(part)
 	if child == nil {
 		// 如果没有匹配上，那么进行生成，放到 n 节点的子列表中

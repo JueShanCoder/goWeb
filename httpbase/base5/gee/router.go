@@ -67,11 +67,14 @@ func (r *router) getRoute(method string, path string) (*node, map[string]string)
 		for index, part := range parts {
 			if part[0] == ':' {
 				params[part[1:]] = searchParts[index]
+				fmt.Printf("part[1:] : %s\n", part[1:])
 			}
 			if part[0] == '*' && len(part) > 1 {
 				params[part[1:]] = strings.Join(searchParts[index:], "/")
+				fmt.Printf("part[1:] : %s\n", part[1:])
 				break
 			}
+			fmt.Printf("[getRoute for params]: %s\n", params)
 		}
 		fmt.Printf("[getRoute n]: %s\n", n)
 		fmt.Printf("[getRoute params]: %s\n", params)
