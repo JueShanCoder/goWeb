@@ -130,3 +130,9 @@ func (group *RouterGroup) Static(relativePath string, root string) {
 	//
 	group.GET(urlPattern, handler)
 }
+
+func Default() *Engine {
+	e := New()
+	e.Use(Logger(), Recovery())
+	return e
+}
