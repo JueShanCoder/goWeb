@@ -6,7 +6,7 @@ type Header struct {
 	// 服务名和方法名
 	ServiceMethod string
 	// 请求的序号，某个请求的 ID
-	Seq string
+	Seq uint64
 	// 错误信息
 	Error string
 }
